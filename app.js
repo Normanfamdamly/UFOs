@@ -6,4 +6,9 @@ var tbody =d3.select("tbody");
 function printHello(){
     console.log("Hello there!");
 }
-let friends = ["Sarah", "Greg", "Cindy", "Jeff"];
+function buildTable(data){
+}
+function buildTable(data) {
+    tbody.html("");
+  }
+  
