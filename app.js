@@ -2,10 +2,6 @@
 const tableData=data;
 //  Reference the HTML tabel using d3
 var tbody =d3.select("tbody");
-// Simple JavaScript console.log statement
-function printHello(){
-    console.log("Hello there!");
-}
 
 function buildTable(data){
 }
@@ -25,4 +21,18 @@ data.forEach((dataRow) => {
     });
 });
 
-
+// Set up new function Handle Click
+function handleClick() {
+// Grab the datetime value from the filter    
+    let date = d3.select("#datetime").property("value");
+    let filteredData = tableData;
+ // Check to see if a date was entered and filter the
+// data useing the data    
+    if (date) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
+// Rebuild the table using the filtered data
+// @note: if no data was entered, then fileredData will
+// just be the originial tableData
+ buildTable(filteredData);    
+};
