@@ -34,5 +34,13 @@ function handleClick() {
 // Rebuild the table using the filtered data
 // @note: if no data was entered, then fileredData will
 // just be the originial tableData
- buildTable(filteredData);    
+ buildTable(filteredData); 
 };
+
+ // Attached an even to listen for the form button
+ d3.selectAll("#filter-btn").on("click", handleClick);
+
+ // Build the table when the page loads
+ buildTable(tableData);
+ 
+
